@@ -6,7 +6,7 @@ import (
 
 	"gopkg.in/mgo.v2/bson"
 
-	"github.com/alexjomin/openapi-parser/docparser/datatest/otherpackage"
+	"github.com/julien-bouquet/openapi-parser/docparser/datatest/otherpackage"
 )
 
 // GetUser returns a user corresponding to specified id

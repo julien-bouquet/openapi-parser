@@ -4,7 +4,7 @@ Parse openAPI from go comments in handlers and structs
 
 ## Install
 
-+ `go get github.com/alexjomin/openapi-parser`
++ `go get github.com/julien-bouquet/openapi-parser`
 
 ## Comments
 

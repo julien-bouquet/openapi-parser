@@ -252,6 +252,13 @@ func TestParseNamedType(t *testing.T) {
 			},
 		},
 		{
+			description: "Should parse the any alias like an Interface type",
+			expr:        &ast.Ident{Name: "any"},
+			expectedSchema: &schema{
+				Ref: "#/components/schemas/AnyValue",
+			},
+		},
+		{
 			description:    "Should parse *ast.SelectorExpr",
 			expr:           &ast.SelectorExpr{X: &ast.Ident{Name: "time"}},
 			expectedSchema: &schema{Type: "string", Format: "date-time"},

@@ -82,6 +82,10 @@ func parseNamedType(gofile *ast.File, expr ast.Expr, sel *ast.Ident) (*schema, e
 	p := schema{}
 	switch ftpe := expr.(type) {
 	case *ast.Ident: // simple value
+		if ftpe.Name == "any" { // alias of interface{}
+			p.Ref = "#/components/schemas/AnyValue"
+			return &p, nil
+		}
 		t, format, err := parseIdentProperty(ftpe)
 		if err != nil {
 			p.Ref = "#/components/schemas/"
